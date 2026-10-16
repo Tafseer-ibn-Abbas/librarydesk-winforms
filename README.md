@@ -17,6 +17,19 @@ Download the Windows ZIP from GitHub Releases, extract it, and run `LibraryDesk.
 - **Due Date Tracking:** Automatic 14-day return deadlines and overdue indicators.
 - **Persistent Storage:** Automatically save library records locally.
 - **Demo Data:** Preloaded sample books for exploring the application.
+## Application Screenshots
+
+### Home Dashboard
+<img width="941" height="604" alt="Main Application Screen" src="https://github.com/user-attachments/assets/8400d2b4-a601-4646-9b05-4156bb4fe2f1" />
+
+### Admin Workspace
+<img width="1117" height="721" alt="Admin Pannel" src="https://github.com/user-attachments/assets/cb7c54a3-1535-4acc-a6be-cbc9b5802e6a" />
+
+### Catalog Search
+<img width="1119" height="719" alt="Search Filter" src="https://github.com/user-attachments/assets/2586ea06-a6b6-48b0-8fda-47382a1e83ee" />
+
+### Browse and Borrow
+<img width="1117" height="720" alt="Issued" src="https://github.com/user-attachments/assets/9c8efc10-8d66-4472-807d-563e04486c18" />
 
 ## Technology Stack
 
