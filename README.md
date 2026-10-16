@@ -1,86 +1,73 @@
-# LibraryDesk
+# LibraryDesk — Library Management System
 
-**A clean, lightweight library management desktop app built with C# and Windows Forms.**
+A lightweight Windows desktop application developed in **C# and .NET Windows Forms** for managing library books, tracking borrowing activity, and organizing daily library operations.
 
-LibraryDesk is a polished portfolio revision of an older classroom *Library Management System*. It preserves the original add / browse / issue / return workflows, improves the experience, and adds local persistence without a database server or external dependencies.
+## Download Windows Application
 
-## Features
+**[Download LibraryDesk v1.0.0](https://github.com/Tafseer-ibn-Abbas/librarydesk-winforms/releases/tag/v1.0.0)**
 
-- Home screen with total, available and issued book counts
-- Admin area to add, find, and remove books (issued books cannot be deleted)
-- Catalog search by title, author, or borrower in the admin area
-- Public/library desk view to search titles and issue or return books
-- Borrower name and automatic 14-day due date when issuing
-- Overdue status highlighting
-- Local XML file saved automatically after changes
-- Six **clearly labeled demo records** for a useful first launch
+Download the Windows ZIP from GitHub Releases, extract it, and run `LibraryDesk.exe`.
 
-## Run on Windows
+## Key Features
 
-### Option A: VS Code + built-in Windows compiler (lightweight; no SDK download)
+- **Dashboard:** View total, available, and issued books.
+- **Book Management:** Add, search, and remove library books.
+- **Book Search:** Find books by title or author.
+- **Borrowing System:** Issue and return books with borrower details.
+- **Due Date Tracking:** Automatic 14-day return deadlines and overdue indicators.
+- **Persistent Storage:** Automatically save library records locally.
+- **Demo Data:** Preloaded sample books for exploring the application.
 
-1. Open this `LibraryDesk_Portfolio` folder in VS Code.
-2. Open **Terminal > New Terminal** (PowerShell).
-3. Run:
+## Technology Stack
 
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\Build-And-Run.ps1
-```
+| Component | Technology |
+|---|---|
+| Programming Language | C# |
+| Desktop Framework | Windows Forms |
+| Target Framework | .NET Framework 4.7.2 |
+| Data Storage | XML |
+| Platform | Windows |
+| Development Tools | VS Code / Visual Studio |
 
-The script compiles and opens `LibraryDesk\bin\Debug\LibraryDesk.exe`. This route uses the Windows C# compiler at `%WINDIR%\Microsoft.NET\Framework[64]\v4.0.30319\csc.exe`. The project source has been made compatible with the older compiler. Requires a functioning .NET Framework 4.x Windows installation; normal project build still targets .NET Framework 4.7.2.
+## Getting Started
 
-**Note:** This alternative build path has not been tested on a native Windows machine. If compilation fails, send the entire terminal output; do not install extra packages until we identify the error.
+### Option 1 — Download the Application
 
-### Option B: Visual Studio
+1. Visit the GitHub Releases page.
+2. Download `LibraryDesk-Windows-v1.0.0.zip`.
+3. Extract the downloaded archive.
+4. Open `LibraryDesk.exe`.
 
-1. Install **Visual Studio 2022** with the **.NET desktop development** workload.
-2. Make sure the **.NET Framework 4.7.2 Developer Pack / targeting pack** is installed. Visual Studio may prompt you to add it.
-3. Open `LibraryDesk.sln`.
-4. Choose **Debug** and press **F5** (or Build > Build Solution).
-5. On the home screen, choose **Open admin** or **Browse library**.
+### Option 2 — Run from Source Code
 
-There are **no NuGet packages, web services, or external databases** to configure.
+Clone the repository, open the project folder in VS Code on Windows, and execute:
 
-### Demo admin access
+`powershell -NoProfile -ExecutionPolicy Bypass -File .\Build-And-Run.ps1`
 
-- Password: `admin123` (demo only)
-- To override the password for your local session, set a Windows user environment variable named `LIBRARYDESK_ADMIN_PASSWORD` and restart the app. For example, in PowerShell before running the app:
+Alternatively, open `LibraryDesk.sln` in Visual Studio with the .NET Framework 4.7.2 targeting pack installed.
 
-```powershell
-$env:LIBRARYDESK_ADMIN_PASSWORD = "MyLocalDemoPassword"
-```
+## Demo Access
 
-> The authentication is intentionally lightweight and **not production-grade**. The demo password is publicly documented, there are no user accounts, and anyone with access to the local data file can edit it. Do not use this project to protect confidential library records.
+**Admin Password:** `admin123`
 
-## Data storage
+The application includes sample library records to demonstrate its functionality.
 
-The app creates its data file in:
+## Local Data Storage
+
+Library records are automatically saved to:
 
 `%LOCALAPPDATA%\LibraryDesk\library.xml`
 
-Six sample books appear **only on the first launch**, when this file does not exist. Subsequent launches load saved books and loan states. The app maintains a simple `library.xml.bak` backup when replacing the saved file.
+Book inventory and borrowing information persist between application sessions.
 
-To start a fresh demo, close the app and move the XML file to a safe place (do not delete user data unless you intend to reset the demo). If stored data is corrupt, the app stops with an error rather than overwriting it.
+## About This Project
 
-## Tech stack
+LibraryDesk demonstrates desktop application development using C#, object-oriented programming, file-based data persistence, and basic library management workflows.
 
-| Area | Technology |
-|---|---|
-| UI | C# Windows Forms |
-| Runtime | .NET Framework 4.7.2 |
-| Storage | XML serialization in local AppData |
-| IDE | Visual Studio 2022 on Windows |
+The application is intended as a functional portfolio demonstration rather than a production-ready, multi-user library platform. Demo authentication should not be used to protect sensitive information.
 
-## Scope
+## Developer
 
-This is intentionally a **small desktop portfolio project**, not a hosted multi-user SaaS platform. It does not implement real user permissions, audit history, fines, barcode scanning, or cloud sync. Those features would add unnecessary complexity for this use case.
+**Tafseer Ibn Abbas**
 
-## Portfolio screenshots
-
-After running the project on Windows, capture the **home**, **admin catalog**, and **borrow/return** screens from the real application before publishing your GitHub README or freelance portfolio. No fabricated runtime screenshots are included.
-
-## Source and release notes
-
-- Original project: student WinForms library management exercise with in-memory records.
-- Portfolio revision: `LibraryDesk`, revised layout, search, persistent storage, borrower names, due dates and basic error handling.
-- Release validation: project XML and source-level checks were performed. A native Windows build and GUI run are **still required** before publishing as a tested app.
+[GitHub Profile](https://github.com/Tafseer-ibn-Abbas)
