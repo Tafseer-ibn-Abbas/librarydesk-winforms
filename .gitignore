@@ -1,0 +1,12 @@
+# Visual Studio / .NET build output
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.cache
+*.pdb
+# Local state should never be committed
+library.xml
+library.xml.bak
+library.xml.tmp
